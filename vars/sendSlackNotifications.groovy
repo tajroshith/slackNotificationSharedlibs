@@ -1,4 +1,4 @@
-def sendSlackNotifications(String buildStatus = 'STARTED') {
+def call(String buildStatus = 'STARTED') {
   // build status of null means successful.
   //This is the condition which we are checking weather buildStatus is SUCCESS or not.
   buildStatus =  buildStatus ?: 'SUCCESS'
