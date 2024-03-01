@@ -22,5 +22,5 @@ def call(String buildStatus = 'STARTED') {
   }
 
   // Send notifications
-  slackSend (color: colorCode, message: summary, channel: "${params.ChannelName}")
+  slackSend (color: colorCode, message: summary, channel: '#buildnotifications')
 }
