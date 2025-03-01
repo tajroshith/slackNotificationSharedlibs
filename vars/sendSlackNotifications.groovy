@@ -6,8 +6,7 @@ def call(String buildStatus = 'STARTED') {
   // Default values
   def colorName = 'RED'
   def colorCode = '#FF0000'
-  def branchName = env.BRANCH_NAME ?: 'N/A'  // Get the branch name or set to 'N/A' if not available
-  def subject = "${buildStatus}: Job '${env.NODE_NAME} ${env.JOB_NAME} [${env.BUILD_NUMBER}]' on branch '${branchName}'"
+  def subject = "${buildStatus}: Job '${env.NODE_NAME} ${env.JOB_NAME} [${env.BUILD_NUMBER}]' on branch '${env.BRANCH_NAME}'"
   def summary = "${subject} (${env.BUILD_URL})"
 
   // Override default values based on build status
