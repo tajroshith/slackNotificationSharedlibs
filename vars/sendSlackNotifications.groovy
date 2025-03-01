@@ -6,7 +6,7 @@ def call(String buildStatus = 'STARTED') {
   // Default values
   def colorName = 'RED'
   def colorCode = '#FF0000'
-  def branchName = env.GIT_BRANCH ?: env.BRANCH_NAME ?: 'N/A'  // Check both env.GIT_BRANCH and env.BRANCH_NAME
+  def branchName = env.GIT_BRANCH ?: params.BranchName ?: env.BRANCH_NAME ?: 'N/A'  // Check both env.GIT_BRANCH and env.BRANCH_NAME
   def subject = "${buildStatus}: Job '${env.NODE_NAME} ${env.JOB_NAME} [${env.BUILD_NUMBER}]' on branch '${branchName}'"
   def summary = "${subject} (${env.BUILD_URL})"
 
